@@ -4,6 +4,8 @@ import "./App.css";
 const App = () => {
   const [Products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState("");
+  const [Price, setPrice] = useState("");
+  const [Description, setDescription] = useState("");
 
   useEffect(() => {
     // Use the Render backend URL here:
@@ -18,17 +20,16 @@ const App = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title: newProduct, completed: false }),
+      body: JSON.stringify({ name: newProduct, price: Price, description: Description  }),
     })
       .then((res) => res.json())
       .then((Product) => setProducts([...Products, Product]));
     setNewProduct("");
+    
   };
 
-  return <>
+  return (<>
   
-  <div className=""> 
-
   <div className=""> 
 
     <h1>product number one </h1>
@@ -46,26 +47,11 @@ const App = () => {
 
    </div>
 
-  </div>
-  
 
-  <div>
-  <h1>To-do List</h1>
-  <input
-    type="text"
-    value={newProduct}
-    onChange={(e) => setNewProduct(e.target.value)}
-  />
-  <button onClick={addProduct}>Add Task</button>
-  <ul>
-    {Products.map((Product) => (
-      <li key={Product.id}>{Product.title}</li>
-    ))}
-  </ul>
-</div>;
 
-  </>;
-};
+  </>
+)
+;
 
 export default App;
 
