@@ -32,14 +32,15 @@ const App = () => {
   <div className=""> 
 
     <h1>product number one </h1>
-    <button onClick={addProduct}>new product {addProduct}</button>
+  <input type="text" value={addProduct}></input>
+    <button onClick={addProduct}>new product</button>
 
   </div>
-
 
   <div className="">
     
   <h1> second product</h1>
+  <input type="text" value={addProduct}></input>
   <button onClick={addProduct}> add product </button>  
 
 
