@@ -46,13 +46,9 @@ const App = () => {
    </div>
 
   </div>
+  
 
-  </>;
-};
-
-export default App;
-
-<div>
+  <div>
   <h1>To-do List</h1>
   <input
     type="text"
@@ -66,3 +62,9 @@ export default App;
     ))}
   </ul>
 </div>;
+
+  </>;
+};
+
+export default App;
+
