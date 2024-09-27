@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
   const [Products, setProducts] = useState([]);
@@ -7,13 +7,13 @@ const App = () => {
 
   useEffect(() => {
     // Use the Render backend URL here:
-    fetch("https://products-hn02.onrender.com")
+    fetch("https://products-cu9j.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
   const addProduct = () => {
-    fetch("https://products-hn02.onrender.com", {
+    fetch("https://products-cu9j.onrender.com/api/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,9 +25,34 @@ const App = () => {
     setNewProduct("");
   };
 
-  return (
-    <>
-    <div>
+  return <>
+  
+  <div className=""> 
+
+  <div className=""> 
+
+    <h1>product number one </h1>
+    <button onClick={addProduct}>new product {addProduct}</button>
+
+  </div>
+
+
+  <div className="">
+    
+  <h1> second product</h1>
+  <button onClick={addProduct}> add product </button>  
+
+
+   </div>
+
+  </div>
+
+  </>;
+};
+
+export default App;
+
+<div>
   <h1>To-do List</h1>
   <input
     type="text"
@@ -40,10 +65,4 @@ const App = () => {
       <li key={Product.id}>{Product.title}</li>
     ))}
   </ul>
-</div>
-    </>
-  );
-};
-
-export default App;
-
+</div>;
